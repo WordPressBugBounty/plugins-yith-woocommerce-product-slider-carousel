@@ -56,7 +56,6 @@ if ( ! class_exists( 'YITH_WooCommerce_Product_Slider' ) ) {
 			// Load Plugin Framework.
 			$this->product_slider = YITH_Product_Slider_Type();
 
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
 			// Add action links.
 			add_filter(
 				'plugin_action_links_' . plugin_basename( YWCPS_DIR . '/' . basename( YWCPS_FILE ) ),
@@ -95,21 +94,6 @@ if ( ! class_exists( 'YITH_WooCommerce_Product_Slider' ) ) {
 			}
 
 			return self::$_instance;
-		}
-
-		/**
-		 * Load the plugin Framework
-		 *
-		 * @since 1.0.0
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
-				}
-			}
 		}
 
 		/**

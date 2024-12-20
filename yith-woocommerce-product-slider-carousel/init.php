@@ -3,7 +3,7 @@
  * Plugin Name: YITH WooCommerce Product Slider Carousel
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-product-slider-carousel/
  * Description: <code><strong>YITH WooCommerce Product Slider Carousel</strong></code> allows you to create responsive product sliders that you can add to your pages through a shortcode. <a href ="https://yithemes.com">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 1.40.0
+ * Version: 1.40.1
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-product-slider-carousel
@@ -13,7 +13,7 @@
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Product Slider Carousel
- * @version 1.40.0
+ * @version 1.40.1
  */
 
 /*
@@ -61,7 +61,7 @@ register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
 if ( ! defined( 'YWCPS_VERSION' ) ) {
-	define( 'YWCPS_VERSION', '1.40.0' );
+	define( 'YWCPS_VERSION', '1.40.1' );
 }
 
 if ( ! defined( 'YWCPS_FREE_INIT' ) ) {
@@ -99,13 +99,10 @@ if ( ! defined( 'YWCPS_SLUG' ) ) {
 	define( 'YWCPS_SLUG', 'yith-woocommerce-product-slider-carousel' );
 }
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YWCPS_DIR . 'plugin-fw/init.php' ) ) {
-	require_once YWCPS_DIR . 'plugin-fw/init.php';
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-
-yit_maybe_plugin_fw_loader( YWCPS_DIR );
-
 
 if ( ! function_exists( 'YITH_Product_Slider_Init' ) ) {
 	/**
@@ -115,8 +112,9 @@ if ( ! function_exists( 'YITH_Product_Slider_Init' ) ) {
 	 */
 	function YITH_Product_Slider_Init() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName
 
-		load_plugin_textdomain( 'yith-woocommerce-product-slider-carousel', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
+		if ( function_exists( 'yith_plugin_fw_load_plugin_textdomain' ) ) {
+			yith_plugin_fw_load_plugin_textdomain( 'yith-woocommerce-product-slider-carousel', basename( dirname( __FILE__ ) ) . '/languages' );
+		}
 		// Load required classes and functions.
 		require_once YWCPS_INC . 'functions.yith-product-slider.php';
 		require_once YWCPS_INC . 'class.yith-product-slider-type.php';
