@@ -3,18 +3,18 @@
  * Plugin Name: YITH WooCommerce Product Slider Carousel
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-product-slider-carousel/
  * Description: <code><strong>YITH WooCommerce Product Slider Carousel</strong></code> allows you to create responsive product sliders that you can add to your pages through a shortcode. <a href ="https://yithemes.com">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 1.42.0
+ * Version: 1.43.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-product-slider-carousel
  * Domain Path: /languages/
- * WC requires at least: 9.5
- * WC tested up to: 9.7
+ * WC requires at least: 9.6
+ * WC tested up to: 9.8
  * Requires Plugins: woocommerce
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Product Slider Carousel
- * @version 1.42.0
+ * @version 1.43.0
  */
 
 /*

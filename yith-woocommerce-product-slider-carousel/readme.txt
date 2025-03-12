@@ -5,7 +5,7 @@ Tags: woocommerce, ecommerce, product carousel, shortcode, autoplay, animations,
 Requires PHP: 7.4
 Requires at least: 6.5
 Tested up to: 6.7
-Stable tag: 1.42.0
+Stable tag: 1.43.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,10 @@ If none of the previous listed actions helps you solve the problem, then, submit
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-product-slider-carousel)
 
 == Changelog ==
+
+= 1.43.0 - Released on 12 March 2025 =
+* New: Support for WooCommerce 9.8
+* Update: YITH plugin framework
 
 = 1.42.0 - Released on 24 February 2025 =
 * New: Support for WooCommerce 9.7
