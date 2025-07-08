@@ -32,6 +32,14 @@ if ( ! class_exists( 'YITH_WooCommerce_Product_Slider' ) ) {
 			 * @var string
 			 */
 		protected $_panel_page = 'yith_wc_product_slider';
+
+		/**
+		 * Product slider instance
+		 *
+		 * @var YITH_Product_Slider_Type
+		 */
+		protected $product_slider;
+
 			/**
 			 * The premium template name
 			 *
